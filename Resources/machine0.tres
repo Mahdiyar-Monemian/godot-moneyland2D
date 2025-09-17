@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MachineResourse" load_steps=3 format=3 uid="uid://beu12kgk4qw1l"]
+
+[ext_resource type="PackedScene" uid="uid://b11muubrmwvcv" path="res://Scenes/machine0.tscn" id="1_l14ub"]
+[ext_resource type="Script" path="res://Scripts/MachineData.gd" id="2_hxs1g"]
+
+[resource]
+script = ExtResource("2_hxs1g")
+price = 6
+sell_value = 3
+rate = 12.0
+amount = 1
+scene = ExtResource("1_l14ub")

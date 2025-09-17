@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwqutx808wlxu"]
+
+[ext_resource type="Script" path="res://Scripts/Tile.gd" id="1_lflow"]
+[ext_resource type="Texture2D" uid="uid://daycjnseo6301" path="res://Sprites/Tile1.png" id="2_u7eq6"]
+[ext_resource type="Texture2D" uid="uid://dijoln5f3ls6v" path="res://Sprites/Tile2.png" id="3_o1pu3"]
+[ext_resource type="Texture2D" uid="uid://cih5g0sx222h4" path="res://Sprites/Tile3.png" id="4_4tvvs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6snjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u7eq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o1pu3")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4tvvs")
+}],
+"loop": true,
+"name": &"select",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j72uv"]
+size = Vector2(160, 160)
+
+[node name="Tile" type="Area2D" groups=["tiles"]]
+script = ExtResource("1_lflow")
+msg = "1"
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_6snjo")
+animation = &"select"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j72uv")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

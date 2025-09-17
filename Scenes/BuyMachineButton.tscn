@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://doucn4jsk45qx"]
+
+[ext_resource type="Texture2D" uid="uid://bhyjyqc05s4ke" path="res://Sprites/UI/machine0Button1.png" id="1_n5gth"]
+[ext_resource type="Texture2D" uid="uid://c5rfiw6ctc43k" path="res://Sprites/UI/machine0Button3.png" id="2_lc8rl"]
+[ext_resource type="Texture2D" uid="uid://be11xg2pxoa10" path="res://Sprites/UI/machine0Button2.png" id="3_sku0o"]
+[ext_resource type="Script" path="res://Scenes/BuyMachineButton.gd" id="4_21l61"]
+[ext_resource type="FontFile" uid="uid://ee27svxjpa4f" path="res://Fonts/upheavtt.ttf" id="5_7hk2j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_647v0"]
+font = ExtResource("5_7hk2j")
+font_size = 40
+font_color = Color(0, 1, 0, 1)
+
+[node name="BuyM0Button" type="TextureButton" groups=["BuyMachineButton"]]
+custom_minimum_size = Vector2(128, 148)
+texture_normal = ExtResource("1_n5gth")
+texture_pressed = ExtResource("2_lc8rl")
+texture_hover = ExtResource("3_sku0o")
+stretch_mode = 0
+script = ExtResource("4_21l61")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -66.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "12"
+label_settings = SubResource("LabelSettings_647v0")
+horizontal_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

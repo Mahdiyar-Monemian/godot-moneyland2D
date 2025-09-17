@@ -1,0 +1,163 @@
+[gd_scene load_steps=21 format=3 uid="uid://dtetmcdrlu03e"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_oce0p"]
+[ext_resource type="PackedScene" uid="uid://cwqutx808wlxu" path="res://Scenes/Tile.tscn" id="2_6sl8i"]
+[ext_resource type="Texture2D" uid="uid://7wcnrutv6x1n" path="res://Sprites/background.png" id="2_m4gvj"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="3_b2xkn"]
+[ext_resource type="PackedScene" uid="uid://doucn4jsk45qx" path="res://Scenes/BuyMachineButton.tscn" id="4_tdtp1"]
+[ext_resource type="Texture2D" uid="uid://b1lfnvq4ay3vj" path="res://Sprites/UI/machine1Button1.png" id="5_ctuil"]
+[ext_resource type="Texture2D" uid="uid://dsvnab3emuecj" path="res://Sprites/UI/machine1Button3.png" id="6_aees1"]
+[ext_resource type="Texture2D" uid="uid://7s1unmxbhvgh" path="res://Sprites/UI/machine0Button4.png" id="6_v0kf1"]
+[ext_resource type="FontFile" uid="uid://ee27svxjpa4f" path="res://Fonts/upheavtt.ttf" id="7_ejrol"]
+[ext_resource type="Texture2D" uid="uid://ct7wwo0bpx6xh" path="res://Sprites/UI/machine1Button2.png" id="7_kf7eb"]
+[ext_resource type="Texture2D" uid="uid://bc512u0mm0cdg" path="res://Sprites/UI/machine1Button4.png" id="10_4o6ap"]
+[ext_resource type="Texture2D" uid="uid://cpwgysgbslun1" path="res://Sprites/UI/machine2Button1.png" id="10_5p5uj"]
+[ext_resource type="Texture2D" uid="uid://buy8eq4mackeg" path="res://Sprites/UI/machine2Button3.png" id="11_72nmb"]
+[ext_resource type="PackedScene" uid="uid://ivyqw24x0meo" path="res://Scenes/sell_button.tscn" id="11_jttgd"]
+[ext_resource type="Texture2D" uid="uid://bexk5j5as0pgt" path="res://Sprites/UI/machine2Button2.png" id="12_42v0m"]
+[ext_resource type="Texture2D" uid="uid://b1b6jp828d2pe" path="res://Sprites/UI/money_text_background.png" id="12_csm5p"]
+[ext_resource type="Texture2D" uid="uid://4mhpw824o1p5" path="res://Sprites/UI/machine2Button4.png" id="14_evybq"]
+[ext_resource type="Texture2D" uid="uid://bv1xkbd6eux0m" path="res://Sprites/monyBar1.png" id="18_hvc5l"]
+[ext_resource type="Texture2D" uid="uid://uqsvaf7cjg6m" path="res://Sprites/monyBar2.png" id="19_y6t6a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qgby"]
+font = ExtResource("7_ejrol")
+font_size = 40
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_oce0p")
+win_money = 300
+
+[node name="Backgrounds" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("2_m4gvj")
+metadata/_edit_lock_ = true
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Tile1" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(80, 80)
+
+[node name="Tile2" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(270, 80)
+msg = "2"
+
+[node name="Tile3" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(460, 80)
+msg = "2"
+
+[node name="Tile4" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(80, 270)
+
+[node name="Tile5" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(270, 270)
+msg = "2"
+
+[node name="Tile6" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(460, 270)
+msg = "2"
+
+[node name="Tile7" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(80, 460)
+
+[node name="Tile8" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(270, 460)
+msg = "2"
+
+[node name="Tile9" parent="Tiles" instance=ExtResource("2_6sl8i")]
+position = Vector2(460, 460)
+msg = "2"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_b2xkn")
+
+[node name="BuyPanel" type="VBoxContainer" parent="HUD"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 0
+alignment = 2
+metadata/_edit_group_ = true
+
+[node name="BuyMButton0" parent="HUD/BuyPanel" instance=ExtResource("4_tdtp1")]
+layout_mode = 2
+texture_disabled = ExtResource("6_v0kf1")
+
+[node name="BuyMButton1" parent="HUD/BuyPanel" instance=ExtResource("4_tdtp1")]
+layout_mode = 2
+texture_normal = ExtResource("5_ctuil")
+texture_pressed = ExtResource("6_aees1")
+texture_hover = ExtResource("7_kf7eb")
+texture_disabled = ExtResource("10_4o6ap")
+
+[node name="BuyMButton2" parent="HUD/BuyPanel" instance=ExtResource("4_tdtp1")]
+layout_mode = 2
+texture_normal = ExtResource("10_5p5uj")
+texture_pressed = ExtResource("11_72nmb")
+texture_hover = ExtResource("12_42v0m")
+texture_disabled = ExtResource("14_evybq")
+
+[node name="StatsPanel" type="Control" parent="HUD"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_right = -152.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="SellButton" parent="HUD/StatsPanel" instance=ExtResource("11_jttgd")]
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+offset_left = 0.0
+offset_top = -16.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 50.0
+grow_horizontal = 0
+texture = ExtResource("12_csm5p")
+metadata/_edit_group_ = true
+
+[node name="MoneyText" type="Label" parent="HUD/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "999 $"
+label_settings = SubResource("LabelSettings_8qgby")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoneyBar" type="TextureProgressBar" parent="HUD"]
+offset_left = 690.0
+offset_top = 100.0
+offset_right = 791.0
+offset_bottom = 437.0
+max_value = 1.0
+step = 0.01
+fill_mode = 3
+texture_under = ExtResource("18_hvc5l")
+texture_progress = ExtResource("19_y6t6a")
+
+[connection signal="buy" from="HUD" to="." method="_on_hud_buy"]
+[connection signal="pressed" from="HUD/BuyPanel/BuyMButton0" to="HUD" method="_on_buy_m_button_0_pressed"]
+[connection signal="pressed" from="HUD/BuyPanel/BuyMButton1" to="HUD" method="_on_buy_m_button_1_pressed"]
+[connection signal="pressed" from="HUD/BuyPanel/BuyMButton2" to="HUD" method="_on_buy_m_button_2_pressed"]
+[connection signal="pressed" from="HUD/StatsPanel/SellButton" to="." method="_on_sell_button_pressed"]

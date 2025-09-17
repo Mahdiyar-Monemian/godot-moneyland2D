@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ivyqw24x0meo"]
+
+[ext_resource type="Texture2D" uid="uid://vvn0ptoxrf06" path="res://Sprites/UI/SellButton1.png" id="1_tuiqd"]
+[ext_resource type="Texture2D" uid="uid://rewm6rjibp41" path="res://Sprites/UI/SellButton3.png" id="2_56lrw"]
+[ext_resource type="Texture2D" uid="uid://chvxoilvc24xx" path="res://Sprites/UI/SellButton2.png" id="3_86chd"]
+[ext_resource type="Texture2D" uid="uid://v03v3i0085eh" path="res://Sprites/UI/SellButton4.png" id="4_4sg3t"]
+[ext_resource type="Script" path="res://Scenes/SellButton.gd" id="4_155ot"]
+[ext_resource type="FontFile" uid="uid://ee27svxjpa4f" path="res://Fonts/upheavtt.ttf" id="5_r67ob"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fokhl"]
+font = ExtResource("5_r67ob")
+font_size = 29
+font_color = Color(0, 1, 0, 1)
+
+[node name="SellButton" type="TextureButton"]
+custom_minimum_size = Vector2(128, 64)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_tuiqd")
+texture_pressed = ExtResource("2_56lrw")
+texture_hover = ExtResource("3_86chd")
+texture_disabled = ExtResource("4_4sg3t")
+stretch_mode = 0
+script = ExtResource("4_155ot")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "12"
+label_settings = SubResource("LabelSettings_fokhl")
+horizontal_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
