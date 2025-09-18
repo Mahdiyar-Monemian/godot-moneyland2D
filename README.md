@@ -1,4 +1,4 @@
-# [Project Name]
+# MoneyLand 2D
 
 ![Godot Version](https://img.shields.io/badge/Godot-4.x-%23478cbf?logo=godot-engine)
 
